@@ -26,6 +26,8 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 
 [libraries]
 
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+
 androidx-activity-activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activityCompose" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "androidx-compose" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidx-compose" }

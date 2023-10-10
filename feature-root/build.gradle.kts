@@ -36,4 +36,7 @@ dependencies {
     implementation(libs.decompose.extensionsCompose)
     implementation(libs.dagger.dagger)
     kapt(libs.dagger.daggerCompiler)
+
+    testImplementation(project(":repository"))
+    testImplementation(libs.kotlin.test)
 }
