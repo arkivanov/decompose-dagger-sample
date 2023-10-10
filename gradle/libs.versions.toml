@@ -1,0 +1,38 @@
+[versions]
+
+project = "1.0.0"
+kotlin = "1.9.10"
+agp = "8.0.2"
+jvmTarget = "11"
+
+android-minSdk = "24"
+android-compileSdk = "34"
+android-targetSdk = "34"
+
+androidx-compose = "1.5.3"
+androidx-composeCompiler = "1.5.3"
+androidx-activityCompose = "1.8.0-alpha06"
+
+decompose = "2.2.0-alpha02"
+dagger = "2.48.1"
+
+[plugins]
+
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+
+[libraries]
+
+androidx-activity-activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activityCompose" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "androidx-compose" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidx-compose" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material", version.ref = "androidx-compose" }
+
+decompose-decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
+decompose-extensionsCompose = { group = "com.arkivanov.decompose", name = "extensions-compose-jetpack", version.ref = "decompose" }
+
+dagger-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-daggerCompiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
