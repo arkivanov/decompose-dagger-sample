@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.android.application)
@@ -27,14 +28,6 @@ android {
         getByName("release") {
             isMinifyEnabled = false
         }
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.composeCompiler.get()
     }
 
     compileOptions {

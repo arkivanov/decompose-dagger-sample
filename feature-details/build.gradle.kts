@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.android.library)
 }
@@ -7,14 +8,6 @@ plugins {
 android {
     namespace = "com.example.myapplication.details"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.composeCompiler.get()
-    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
