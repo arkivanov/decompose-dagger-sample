@@ -9,7 +9,7 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 
-class DefaultDetailsComponent @AssistedInject internal constructor(
+internal class DefaultDetailsComponent @AssistedInject constructor(
     repository: Repository,
     @Assisted componentContext: ComponentContext,
     @Assisted("itemId") itemId: String,

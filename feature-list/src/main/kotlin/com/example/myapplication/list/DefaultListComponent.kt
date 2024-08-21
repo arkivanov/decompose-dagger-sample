@@ -9,7 +9,7 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 
-class DefaultListComponent @AssistedInject internal constructor(
+internal class DefaultListComponent @AssistedInject constructor(
     repository: Repository,
     @Assisted componentContext: ComponentContext,
     @Assisted private val onItemSelected: (id: String) -> Unit,

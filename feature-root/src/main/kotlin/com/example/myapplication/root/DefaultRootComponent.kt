@@ -12,7 +12,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.serialization.Serializable
 
-class DefaultRootComponent @AssistedInject internal constructor(
+internal class DefaultRootComponent @AssistedInject constructor(
     private val listFactory: ListComponent.Factory,
     private val detailsFactory: DetailsComponent.Factory,
     @Assisted componentContext: ComponentContext,
