@@ -22,6 +22,7 @@ android {
 
 dependencies {
     ksp(libs.anvilUtils.compiler)
+    ksp(project(":my-processor"))
     implementation(project(":repository"))
     implementation(project(":utils"))
     implementation(libs.androidx.compose.runtime)

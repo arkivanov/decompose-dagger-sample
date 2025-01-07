@@ -47,3 +47,5 @@ dagger-daggerCompiler = { group = "com.google.dagger", name = "dagger-compiler",
 anvil-annotations = { group = "dev.zacsweers.anvil", name = "annotations-optional", version.ref = "anvil" }
 anvilUtils-annotations = { group = "me.gulya.anvil", name = "annotations", version.ref = "anvil-utils" }
 anvilUtils-compiler = { group = "me.gulya.anvil", name = "compiler", version.ref = "anvil-utils" }
+
+ksp-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp" }

@@ -13,6 +13,7 @@ import me.gulya.anvil.assisted.ContributesAssistedFactory
 @ContributesAssistedFactory(AppScope::class, ListComponent.Factory::class)
 class DefaultListComponent @AssistedInject constructor(
     repository: Repository,
+    dep: ListComponentDependency,
     @Assisted componentContext: ComponentContext,
     @Assisted private val onItemSelected: (id: String) -> Unit,
 ) : ListComponent, ComponentContext by componentContext {
