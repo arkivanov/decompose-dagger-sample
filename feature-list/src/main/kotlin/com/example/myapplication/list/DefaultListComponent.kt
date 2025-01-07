@@ -5,11 +5,13 @@ import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import com.example.myapplication.repository.Item
 import com.example.myapplication.repository.Repository
+import com.example.myapplication.utils.AppScope
 import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import me.gulya.anvil.assisted.ContributesAssistedFactory
 
-internal class DefaultListComponent @AssistedInject constructor(
+@ContributesAssistedFactory(AppScope::class, ListComponent.Factory::class)
+class DefaultListComponent @AssistedInject constructor(
     repository: Repository,
     @Assisted componentContext: ComponentContext,
     @Assisted private val onItemSelected: (id: String) -> Unit,
@@ -19,13 +21,5 @@ internal class DefaultListComponent @AssistedInject constructor(
 
     override fun onItemClicked(id: String) {
         onItemSelected(id)
-    }
-
-    @AssistedFactory
-    interface Factory : ListComponent.Factory {
-        override fun invoke(
-            componentContext: ComponentContext,
-            onItemSelected: (id: String) -> Unit,
-        ): DefaultListComponent
     }
 }

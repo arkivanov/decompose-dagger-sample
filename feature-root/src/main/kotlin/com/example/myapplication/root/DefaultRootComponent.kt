@@ -1,18 +1,24 @@
 package com.example.myapplication.root
 
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.router.stack.*
+import com.arkivanov.decompose.router.stack.ChildStack
+import com.arkivanov.decompose.router.stack.StackNavigation
+import com.arkivanov.decompose.router.stack.childStack
+import com.arkivanov.decompose.router.stack.pop
+import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
 import com.example.myapplication.details.DetailsComponent
 import com.example.myapplication.list.ListComponent
 import com.example.myapplication.root.RootComponent.Child.DetailsChild
 import com.example.myapplication.root.RootComponent.Child.ListChild
+import com.example.myapplication.utils.AppScope
 import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.serialization.Serializable
+import me.gulya.anvil.assisted.ContributesAssistedFactory
 
-internal class DefaultRootComponent @AssistedInject constructor(
+@ContributesAssistedFactory(AppScope::class, RootComponent.Factory::class)
+class DefaultRootComponent @AssistedInject constructor(
     private val listFactory: ListComponent.Factory,
     private val detailsFactory: DetailsComponent.Factory,
     @Assisted componentContext: ComponentContext,
@@ -55,10 +61,5 @@ internal class DefaultRootComponent @AssistedInject constructor(
 
         @Serializable
         data class Details(val itemId: String) : Config
-    }
-
-    @AssistedFactory
-    interface Factory : RootComponent.Factory {
-        override fun invoke(componentContext: ComponentContext): DefaultRootComponent
     }
 }
