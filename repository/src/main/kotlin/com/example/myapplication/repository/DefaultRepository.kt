@@ -1,7 +1,12 @@
 package com.example.myapplication.repository
 
+import com.example.myapplication.utils.AppScope
+import com.squareup.anvil.annotations.ContributesBinding
+import com.squareup.anvil.annotations.optional.SingleIn
 import javax.inject.Inject
 
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class DefaultRepository @Inject constructor() : Repository {
 
     private val itemMap: Map<String, Item> =

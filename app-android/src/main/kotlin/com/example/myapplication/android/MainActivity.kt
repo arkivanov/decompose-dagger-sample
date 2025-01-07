@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val component = DaggerMainDaggerComponent.create().rootComponentFactory(defaultComponentContext())
+        val component = DaggerAppDaggerComponent.create().rootComponentFactory(defaultComponentContext())
 
         setContent {
             MaterialTheme {

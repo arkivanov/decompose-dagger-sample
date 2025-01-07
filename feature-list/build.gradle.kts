@@ -1,8 +1,9 @@
 plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.anvil)
 }
 
 android {
@@ -20,12 +21,20 @@ android {
 }
 
 dependencies {
+    ksp(libs.anvilUtils.compiler)
     implementation(project(":repository"))
+    implementation(project(":utils"))
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.material)
     implementation(libs.decompose.decompose)
     implementation(libs.decompose.extensionsCompose)
     implementation(libs.dagger.dagger)
-    kapt(libs.dagger.daggerCompiler)
+    implementation(libs.anvil.annotations)
+    implementation(libs.anvilUtils.annotations)
+}
+
+anvil {
+    useKsp(contributesAndFactoryGeneration = true)
+    generateDaggerFactories = true
 }
